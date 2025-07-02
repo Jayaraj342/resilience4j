@@ -22,6 +22,11 @@ public class Demo1Controller {
         return demo1Service.myMethod().get();
     }
 
+    @GetMapping("get2")
+    public String myMethod2() throws InterruptedException, ExecutionException {
+        return demo1Service.myMethod2().get();
+    }
+
     @GetMapping("test")
     public String runTest() throws InterruptedException {
         return bulkheadTestRunner.runTest();

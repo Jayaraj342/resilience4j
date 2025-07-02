@@ -15,4 +15,11 @@ public class Demo1Service {
         Thread.sleep(5000);
         return CompletableFuture.completedFuture("success!");
     }
+
+    @Bulkhead(name = "mybulkhead2")
+    @TimeLimiter(name = "mybulkhead2")
+    public CompletableFuture<String> myMethod2() throws InterruptedException {
+        Thread.sleep(5000);
+        return CompletableFuture.completedFuture("success!");
+    }
 }
