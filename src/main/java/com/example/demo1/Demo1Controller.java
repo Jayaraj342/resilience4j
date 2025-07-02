@@ -28,7 +28,7 @@ public class Demo1Controller {
     }
 
     @GetMapping("test")
-    public String runTest() throws InterruptedException {
+    public String runTest() {
         return bulkheadTestRunner.runTest();
     }
 }
