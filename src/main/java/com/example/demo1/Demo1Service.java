@@ -9,15 +9,15 @@ import java.util.concurrent.CompletableFuture;
 @Service
 public class Demo1Service {
 
-    @Bulkhead(name = "mybulkhead1", type = Bulkhead.Type.THREADPOOL)
-    @TimeLimiter(name = "mybulkhead1")
+    @Bulkhead(name = "myBulkhead1", type = Bulkhead.Type.THREADPOOL)
+    @TimeLimiter(name = "myBulkhead1")
     public CompletableFuture<String> myMethod() throws InterruptedException {
         Thread.sleep(5000);
         return CompletableFuture.completedFuture("success!");
     }
 
-    @Bulkhead(name = "mybulkhead2")
-    @TimeLimiter(name = "mybulkhead2")
+    @Bulkhead(name = "myBulkhead2")
+    @TimeLimiter(name = "myBulkhead2")
     public CompletableFuture<String> myMethod2() throws InterruptedException {
         Thread.sleep(5000);
         return CompletableFuture.completedFuture("success!");
